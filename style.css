@@ -7,12 +7,20 @@
 
 .container
 {
+    
     height: 900px;
-    display: grid;
+    display: none;
     align-content: center;
     grid-template-columns: auto auto auto;
     justify-content: center;
     
+}
+
+input[type=text]
+{
+    height: 1.5rem;
+    font-size: 18px;
+    border: 1px solid #ccc;
 }
 
 .grid-items
@@ -26,4 +34,31 @@
     cursor: pointer;
     font-size: 28px;
     font-weight: bold;
+}
+
+label
+{
+    margin: 2rem 0;
+    display: block;
+    font-size: 28px;
+    text-align: center;
+}
+
+fieldset
+{
+    margin-top: 3rem;
+    border: 1px solid #ccc;
+}
+
+.btn
+{
+    display: block;
+    border:1px solid #ccc;
+    margin: 1rem auto;
+    padding: .5rem;
+    cursor: pointer;
+}
+.btn:hover
+{
+    background-color: aliceblue;
 }

@@ -1,4 +1,6 @@
 const griditems = document.querySelectorAll('.grid-items');
+let container = document.getElementById('container');
+let mainscreen = document.getElementById('mainscreen');
 let choice_1 = document.querySelector('.choice-1')
 let choice_2 = document.querySelector('.choice-2')
 let choice_3 = document.querySelector('.choice-3')
@@ -10,6 +12,24 @@ let choice_8 = document.querySelector('.choice-8')
 let choice_9 = document.querySelector('.choice-9')
 let count=0;
 let winner;
+let playername1, playername2;
+const button = document.querySelector('#btn');
+button.addEventListener('click',(event)=>{
+    event.preventDefault();
+    playername1 = document.getElementById('player1').value;
+    playername2 = document.getElementById('player2').value;
+
+    if (playername1.trim() === '' || playername2.trim() === '') {
+        alert('Please enter both player names');
+    } else {
+        mainscreen.style.display = "none";
+        container.style.display = "grid";
+    }
+})
+
+
+// const arr = Array.from(griditems);
+// console.log(arr)
 griditems.forEach(griditem=>{
     griditem.addEventListener('click',(game))
 });
@@ -37,8 +57,8 @@ function game()
            ||choice_1.innerHTML ==="X" && choice_5.innerHTML==="X" && choice_9.innerHTML==="X"
            ||choice_3.innerHTML ==="X" && choice_5.innerHTML==="X" && choice_7.innerHTML==="X")
           {
-            console.log("Player 1 Won");
-            winner= "Player 1 Won";
+            console.log(playername1+" Won");
+            winner= playername1+" Won";
             gamewinner(winner);
             
           }
@@ -51,8 +71,8 @@ function game()
           ||choice_1.innerHTML ==="O" && choice_5.innerHTML==="O" && choice_9.innerHTML==="O"
           ||choice_3.innerHTML ==="O" && choice_5.innerHTML==="O" && choice_7.innerHTML==="O")
           {
-            console.log("Player 2 Won");
-            winner= "Player 2 Won";
+            console.log(playername2+" Won");
+            winner= playername2+" Won";
             gamewinner(winner)
           }
           else if(count===9)
@@ -70,13 +90,13 @@ function game()
 
 function gamewinner(winner)
 {
-    if(winner === "Player 1 Won")
+    if(winner === playername1+" Won")
     {
-        alert("Player 1 Won");
+        alert(playername1+" Won");
     }
-    else if(winner === "Player 2 Won")
+    else if(winner === playername2+" Won")
     {
-        alert("Player 2 Won");
+        alert(playername2+" Won");
     }
     else
     {
