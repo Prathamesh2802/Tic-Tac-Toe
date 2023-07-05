@@ -102,4 +102,7 @@ function gamewinner(winner)
     {
         alert("Match Drawn")
     }
+    setTimeout(function() {
+        location.reload();
+    }, 1000);
 }
